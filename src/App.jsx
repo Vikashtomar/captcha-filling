@@ -1,12 +1,25 @@
-import React from 'react'
+ import React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
-function App() {
-  return (
-    <div>
+ 
+ function App() {
 
-      captcha filling
-    </div>
-  )
-}
+  let chars = "abcdefghijklmnopqrstuvwxyz"
+  const [save,setSave] = useState([])
+  const [val,setVal] = useState([])
+  let temp = '';
 
-export default App
+  useEffect(()=>{
+    for(let i=0; i<=6; i++){
+      let random = str[Math.floor(Math.random() * chars.length)]
+      temp = temp + random
+    }
+    setSave(temp)
+  },[])
+   return (
+     <div>App</div>
+   )
+ }
+ 
+ export default App
